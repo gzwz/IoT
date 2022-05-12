@@ -17,16 +17,18 @@ class MyWorker implements Runnable {
     @Override
     public void run() {
         InputStream ins = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             ins = socket.getInputStream();
             byte[] buff = new byte[1];
             int len = 0;
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
             while ((len = ins.read(buff,0,buff.length)) != -1){
                 bos.write(buff,0,len);
             }
             System.out.println(new String(bos.toByteArray()));
         } catch (Exception e) {
+            System.out.println(new String(bos.toByteArray()));
             e.printStackTrace();
         }finally {
             if (ins == null) {
