@@ -1,14 +1,15 @@
-package cn.wlz;
+package wlz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class Application {
+public class SwApplication {
     public static void main(String[] args) {
-        ApplicationContext run = SpringApplication.run(Application.class);
+        System.out.println(System.getProperty("file.encoding"));
+        System.out.println("你好中国￥");
+        ApplicationContext run = SpringApplication.run(SwApplication.class);
         try {
             Thread.sleep(100000);
         } catch (InterruptedException e) {
