@@ -9,7 +9,7 @@ public class SwApplication {
     public static void main(String[] args) {
         System.out.println(System.getProperty("file.encoding"));
         System.out.println("你好中国￥");
-        ApplicationContext run = SpringApplication.run(SwApplication.class);
+        SpringApplication.run(SwApplication.class);
         try {
             Thread.sleep(100000);
         } catch (InterruptedException e) {
