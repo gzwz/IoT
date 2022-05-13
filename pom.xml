@@ -38,18 +38,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--<dependency>
-                <groupId>cn.wlz</groupId>
-                <artifactId>dependency</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>-->
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <!--<dependency>
-            <groupId>cn.wlz</groupId>
-            <artifactId>dependency</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>-->
-    </dependencies>
 </project>
