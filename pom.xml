@@ -3,8 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>cn.wlz</groupId>
+    <parent>
+        <artifactId>dependency</artifactId>
+        <groupId>cn.wlz</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <artifactId>IoT</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -29,8 +32,7 @@
         </plugins>
     </build>-->
     <modules>
-        <!--<module>dependency</module>-->
-       <module>server-worker</module>
+        <module>server-worker</module>
         <module>dependency</module>
     </modules>
 
@@ -44,11 +46,4 @@
         </dependencies>
 
     </dependencyManagement>
-    <dependencies>
-        <!--<dependency>
-            <groupId>cn.wlz</groupId>
-            <artifactId>dependency</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>-->
-    </dependencies>
 </project>

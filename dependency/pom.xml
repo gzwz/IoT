@@ -2,50 +2,64 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
+<!--    <parent>
         <artifactId>IoT</artifactId>
         <groupId>cn.wlz</groupId>
         <version>1.0-SNAPSHOT</version>
-    </parent>
+    </parent>-->
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>cn.wlz</groupId>
+    <version>1.0-SNAPSHOT</version>
     <artifactId>dependency</artifactId>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.77.Final</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+            <!--<dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>2.17.2</version>
+            </dependency>-->
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
+            <!--<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>2.6.7</version>
+            </dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/org.fusesource.mqtt-client/mqtt-client -->
+            <dependency>
+                <groupId>org.fusesource.mqtt-client</groupId>
+                <artifactId>mqtt-client</artifactId>
+                <version>1.16</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <version>2.6.7</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.77.Final</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.17.2</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-            <version>2.6.7</version>
-        </dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.fusesource.mqtt-client/mqtt-client -->
-        <dependency>
-            <groupId>org.fusesource.mqtt-client</groupId>
-            <artifactId>mqtt-client</artifactId>
-            <version>1.16</version>
         </dependency>
 
     </dependencies>
