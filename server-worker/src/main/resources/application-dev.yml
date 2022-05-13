@@ -1,0 +1,6 @@
+
+logging:
+  config: classpath:logback-spring-deva.xml
+spring:
+  datasource:
+    jndi-name: testdata

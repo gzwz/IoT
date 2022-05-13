@@ -21,7 +21,7 @@ public class ServerDemo {
         try {
 
             serverSocket = new ServerSocket(port);
-            System.out.println(new String("服务启动成功：".getBytes("utf8"))+pool);
+            System.out.println( "服务启动成功："+pool);
             while (true){
                 Socket socket = serverSocket.accept();
                 pool.submit(new MyWorker(socket));

@@ -13,22 +13,13 @@ class MyWorker implements Runnable {
     public MyWorker(Socket socket) {
         this.socket = socket;
     }
-
     @Override
     public void run() {
         InputStream ins = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             ins = socket.getInputStream();
-            byte[] buff = new byte[1];
-            int len = 0;
-
-            while ((len = ins.read(buff,0,buff.length)) != -1){
-                bos.write(buff,0,len);
-            }
-            System.out.println(new String(bos.toByteArray()));
+            processProtocol(ins);
         } catch (Exception e) {
-            System.out.println(new String(bos.toByteArray()));
             e.printStackTrace();
         }finally {
             if (ins == null) {
@@ -39,5 +30,31 @@ class MyWorker implements Runnable {
                 }
             }
         }
+    }
+
+    private void processProtocol(InputStream ins) {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        byte[] buff = new byte[1];
+        int len = 0;
+        try {
+            ins.read();
+            while ((len = ins.read(buff,0,buff.length)) != -1){
+                bos.write(buff,0,len);
+            }
+        }catch (Exception e){
+            System.out.println(new String(bos.toByteArray()));
+            e.printStackTrace();
+        }finally {
+        if (bos == null) {
+            try {
+                bos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+        System.out.println(new String(bos.toByteArray()));
     }
 }
