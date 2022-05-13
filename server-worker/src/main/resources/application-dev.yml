@@ -4,3 +4,5 @@ logging:
 spring:
   datasource:
     jndi-name: testdata
+server:
+  port: 8888
